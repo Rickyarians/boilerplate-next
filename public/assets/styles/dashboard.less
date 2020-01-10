@@ -1,0 +1,133 @@
+.root{
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFBFC;
+}
+
+.title  {
+  color : white
+}
+
+.container-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #FAFBFC;
+}
+
+.bodyContainer  {
+  padding-top : 30px;
+  padding-inline: 100px;
+  background-color: #FAFBFC;
+  min-height: 100vh;
+}
+.sideContainer  {
+  display: flex;
+  flex-direction: column;
+  height : 100%;
+  width : 50%;
+  padding: 10px;
+  background-color: transparent
+}
+.category  {
+  display: flex;
+  font-size: 12px;
+  margin-top: 10px;
+  padding-inline : 10px;
+  justify-Content: space-between;
+  align-items: center;
+}
+
+a > .categoryItem  {
+  display: flex;
+  color : #4B6584;
+  font-size: 12px;
+  margin-top: 10px;
+  padding : 10px;
+  align-items: center;
+  font-weight: bold;
+};
+.categoryItem:focus{
+  color:red
+}
+a > .categoryItemActive {
+  display: flex;
+  color : #4B6584;
+  font-size: 12px;
+  margin-top: 10px;
+  padding : 10px;
+  align-items: center;
+  font-weight: bold;
+  color : #7D4FC0;
+  background-color: #E9E7F7
+  
+}
+.contentContainer  {
+  height : 100%;
+}
+.cardContainer  {
+  padding-top: 30px;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+.cardListContainer  {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.addBtn  {
+  display: flex;
+  flex-direction: column;
+  justify-Content: center;
+  align-items: center;
+  margin-left: 20px;
+  border-style: dotted;
+  width : 150px;
+  height: 150px;
+  border-color: #7D4FC0;
+  border-radius: 10px;
+}
+.platformContainer  {
+  display: flex;
+  flex-direction: row;
+  padding-top :20px;
+}
+.platformBtn  {
+  display: flex;
+  flex-direction: column;
+  justify-Content: center;
+  align-items: center;
+  margin-right: 20px;
+  border-style: dotted;
+  width : 150px;
+  height: 150px;
+  border-color: #7D4FC0;
+  border-radius: 10px;
+}
+.platformBtnSelected  {
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-Content: center;
+  align-items: center;
+  margin-right: 20px;
+  border-style: dotted;
+  width : 150px;
+  height: 150px;
+  border-color: #7D4FC0;
+  border-radius: 10px;
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #F4F7FC;
+}
+
+.ant-popover-inner-content{
+  padding: 5px 5px;
+}

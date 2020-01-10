@@ -1,0 +1,134 @@
+.question{
+  color: #1e272e;
+  font-family: Poppins;
+  font-size: 26px;
+  font-weight: 600;
+}
+.description-checkin{
+  color: #1e272e;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.markdown-style p {
+  font-size: 14px !important;
+}
+.more-icon{
+  position: absolute;
+  top:15px;
+  right: 15px;
+}
+.answer-input{
+  border:1px solid #778CA3;
+  border-radius: 30px;
+  height: 50px;
+  margin-left: 10px;
+  color: #778CA3;
+  width:100%;
+}
+.message{
+  max-width: 50%;
+}
+
+.btn-send-messagechaaat {
+  width: 30px;
+  height: 32px;
+  padding: 0.5% 0%;
+  margin-top: 0.5%;
+}
+
+.create_new_btn {
+  background-color: #F7B731;
+  cursor: pointer;
+  border: 2px solid #F7B731;
+  border-radius: 5px;
+  color:white;
+  height: 100%;
+  padding: 5px 8px;
+}
+
+.fab-checkin-mobile {
+  display: none;
+}
+
+.create_new_btn:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #F7B731;
+  color:#F7B731;
+  height: 100%;
+}
+
+.empty-wrapper-checkin {
+  margin-top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+@media only screen and (max-width:768px){
+  .mobile-checkin{
+    padding-top: 4rem !important;
+  }
+
+  .btn-send-messagechaaat {
+    width: 30px;
+    height: 28px;
+    padding: 0.5% 0%;
+    margin-top: 1%;
+  }
+
+  .mobile-checkin .container {
+    flex-direction: column;
+  }
+
+  .mobile-checkin .button-add-checkin-wrapper {
+    width: 100%;
+  }
+
+  .mobile-test {
+    background-attachment: fixed;
+  }
+
+  .mobile-checkin .button-add-checkin-wrapper .create_new_btn {
+    width: 25%;
+
+  }
+  .mobile-checkin .description-checkin {
+    font-size: 12px !important;
+  }
+
+  .title-checkin-mobile {
+    display: none;
+  }
+
+  .button-checkin-mobile {
+    display: none;
+  }
+
+  .fab-checkin-mobile {
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width:425px) {
+  .empty-wrapper-checkin {
+    margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-send-messagechaaat {
+    width: 30px;
+    height: 24px;
+    padding: 0.5% 0%;
+    margin-top: 2.6%;
+  }
+}

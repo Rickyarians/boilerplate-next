@@ -1,0 +1,161 @@
+.schedule .rbc-calendar {
+  background-color: #fff;
+  padding: 1.5rem;
+}
+
+.schedule .toolbar {
+  background: #f4f7fc;
+  margin-top: -1.5rem;
+  margin-right: -1.5rem;
+  margin-left: -1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.schedule .btn-toolbar {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  height: auto !important;
+  border-color: #fff;
+}
+
+.schedule .btn-toolbar:hover, .schedule .btn-toolbar:active, .schedule .btn-toolbar:focus {
+  border-color: #fff;
+  color: #f7b731;
+  background-color: #fff;
+}
+
+.schedule .rbc-month-view {
+  height: unset !important;
+}
+
+.schedule .ant-btn-group .active {
+  color: #fff;
+  background-color: #f7b731;
+  border-color: #f7b731;
+}
+
+.schedule .rbc-event.rbc-selected {
+  background-color: transparent !important;
+}
+
+.schedule .rbc-day-slot .rbc-event {
+  border: unset !important;
+  height: unset !important;
+}
+
+.schedule .rbc-day-slot, .schedule .rbc-event {
+  padding: 0;
+}
+
+.schedule .rbc-day-slot .rbc-event-content {
+  min-height: auto !important;
+}
+
+.schedule .rbc-event-label {
+  display: none;
+}
+
+.schedule .rbc-time-slot {
+  margin-top: .5rem;
+}
+
+.schedule .ant-btn {
+  height: unset;
+}
+
+.schedule .ant-collapse-header {
+  padding: 5px 5px !important;
+  font-weight: 600;
+  color: #fff !important;
+  position: relative;
+}
+
+.schedule .ant-collapse-header::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(100, 100, 100, .1);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.schedule .ant-collapse-header i {
+  right: 5px !important;
+  color: #fff !important;
+}
+
+.schedule .ant-collapse-borderless > .ant-collapse-item {
+  border-color: transparent;
+}
+
+.schedule .ant-collapse-content > .ant-collapse-content-box {
+  padding: 5px;
+}
+
+.schedule .ant-collapse-content > .ant-collapse-content-box * {
+  font-weight: 500;
+  color: #fff;
+}
+
+.create_new_btn{
+  background-color: #F7B731;
+  border: 2px solid #F7B731;
+  border-radius: 5px;
+  color:white;
+  height: 100%;
+  padding: 5px 8px;
+}
+
+.create_new_btn:hover {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #F7B731;
+  color:#F7B731;
+  height: 100%;
+  
+}
+
+
+.fab-button-schedule {
+    display: none;
+  }
+
+
+@media only screen and (max-width:768px){
+
+
+  .mobile-calendar {
+    padding-top: 4rem;
+  }
+  .title-schelude-mobile {
+    display: none;
+  }
+  
+  .create_new_btn {
+    display: none;
+  }
+
+  .fab-button-schedule {
+    display: inline-block;
+  }
+
+  .mobile-calendar h3.ant-typography, .ant-typography h3{
+    font-size: 16px !important;
+  }
+
+  #fade-in > div > div > div:nth-child(2) > div > div.ant-row.toolbar > div.ant-col.ant-col-8.text-center > div >  button  {
+    padding: 0.5rem 0.1rem;
+  }
+
+  #fade-in > div > div > div:nth-child(2) > div > div.ant-row.toolbar > div.ant-col.ant-col-8.text-center > div > button > span {
+    font-size: 10px !important;
+  }
+
+  #fade-in > div > div > div:nth-child(2) > div > div.ant-row.toolbar > div.ant-col.ant-col-8.text-right > div > button {
+    padding: 0.5rem 0.1rem;
+  }
+
+ }

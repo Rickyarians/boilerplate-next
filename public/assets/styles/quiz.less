@@ -1,0 +1,281 @@
+@font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+* {
+        font-family: 'Poppins' !important;
+}
+
+
+
+.button-quiz {
+        // color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        // background: #ed3330;
+        padding: 0.5rem 0.7rem;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.7rem;
+        letter-spacing: 0.05rem;
+        margin-right: 0.1rem;
+        margin-left: 0.1rem;
+//        height: calc(90% * 7.5vh);
+        cursor: pointer;
+}
+
+
+.settings-bg {
+        width: 100%;
+        background-color: #ECF0F1;
+        padding-top: 0.5%;
+      
+        max-height: 3.25rem;
+}
+
+.v-h
+
+.option-settings {
+        cursor: pointer;
+
+}
+
+.option-settings:hover {
+        color: #fff !important;
+}
+
+.section-intro-height {
+        background-color: #fff;
+       
+        height: 100vh;
+        overflow-y: hidden;
+        padding: 3rem !important;
+
+        @media screen and (max-width: 375px) {
+                padding: 1rem !important
+        }
+
+        @media screen and (max-width: 320px) {
+
+
+                padding: 1rem !important
+
+        }
+}
+
+.section-intro {
+        background-color: #fff;
+        // height: 100vh;
+        overflow-y: hidden;
+        padding: 3rem !important;
+
+        @media screen and (max-width: 375px) {
+                padding: 1rem !important
+        }
+
+        @media screen and (max-width: 320px) {
+
+
+                padding: 1rem !important
+
+        }
+}
+
+.title-intro-quiz {
+        color: #1E272E;
+        font-weight: 800;
+}
+
+.quiz-title-sub {
+        color: #778CA3;
+
+
+}
+
+.sm-none {
+        @media screen and (max-width: 375px) {
+
+                display: none!important;
+
+        }
+
+        @media screen and (max-width: 320px) {
+
+
+                display: none !important;
+
+        }
+}
+
+.d-flex-quiz {
+        display: flex !important;
+
+        @media screen and (max-width: 375px) {
+
+                display: block !important;
+
+        }
+
+        @media screen and (max-width: 320px) {
+
+
+                display: block !important;
+
+        }
+}
+
+.quiz-color-black {
+        color: #1E272E;
+}
+
+.quiz-color-grey {
+        color: #778CA3;
+}
+
+.inputGroup {
+        background-color: #fff;
+        display: block;
+        margin: 10px 0;
+        position: relative;
+
+        label {
+                padding: 12px 30px;
+                width: 100%;
+                display: block;
+                text-align: left;
+                color: #3C454C;
+                cursor: pointer;
+                position: relative;
+                z-index: 2;
+                transition: color 200ms ease-in;
+                overflow: hidden;
+
+                &:before {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        content: '';
+                        background-color: #5562eb;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) scale3d(1, 1, 1);
+                        transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+                        opacity: 0;
+                        z-index: -1;
+                }
+
+                &:after {
+                        width: 32px;
+                        height: 32px;
+                        content: '';
+                        border: 2px solid #D1D7DC;
+                        background-color: #fff;
+                        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+                        background-repeat: no-repeat;
+                        background-position: 2px 3px;
+                        border-radius: 50%;
+                        z-index: 2;
+                        position: absolute;
+                        right: 30px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                        transition: all 200ms ease-in;
+                }
+        }
+
+        input:checked~label {
+                color: #fff;
+
+                &:before {
+                        transform: translate(-50%, -50%) scale3d(56, 56, 1);
+                        opacity: 1;
+                }
+
+                &:after {
+                        background-color: #54E0C7;
+                        border-color: #54E0C7;
+                }
+        }
+
+        input {
+                width: 32px;
+                height: 32px;
+                order: 1;
+                z-index: 2;
+                position: absolute;
+                right: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                visibility: hidden;
+        }
+}
+
+
+
+// Radio Style
+
+.ant-radio-wrapper {
+        padding: 0.5rem 0.5rem !important;
+}
+
+.quiz-radio {
+        border: 2px solid #D6E1E3;
+        border-radius: 0.2rem;
+        min-width: 250px;
+        max-width: 250px;
+}
+
+.quiz-radio-checked {
+        border: 2px solid #8854D0;
+        border-radius: 0.2rem;
+        min-width: 250px;
+        max-width: 250px;
+}
+
+
+.quiz-radiostyle {
+        display: block !important;
+        height: 40px;
+        line-height: 40px;
+        max-width: 250px;
+        min-width: 250px;
+}
+
+.ant-radio-checked {
+        color: #8854D0 !important;
+}
+
+
+.ant-radio-checked .ant-radio-inner {
+        border-color: #8854D0 !important;
+}
+
+.ant-radio-inner::after {
+        background-color: #8854D0 !important;
+}
+
+.img-goodjoob {
+        margin-top: 0.5rem;
+        height: 20px;
+}
+
+.disable-buttoncuk {
+        cursor: not-allowed;
+        pointer-events: all !important;
+}
+
+@media screen {
+        @media (min-width: 1023px) {
+                .selector {
+                        color: blue;
+                }
+        }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="76.058" height="104" viewBox="0 0 76.058 104">
+    <defs>
+        <style>
+            .cls-1{fill:#28b446}.cls-2{fill:#219b38}.cls-3{fill:#6ace7c}.cls-4{fill:#fff}
+        </style>
+    </defs>
+    <g id="_003-sheets" data-name="003-sheets" transform="translate(-70.589)">
+        <path id="Path_857" d="M146.647 28.485V97.3a6.734 6.734 0 0 1-6.765 6.7H77.354a6.732 6.732 0 0 1-6.765-6.7V6.7A6.732 6.732 0 0 1 77.354 0h40.53z" class="cls-1" data-name="Path 857"/>
+        <path id="Path_858" d="M320.31 123.461l24.839 10.139v-9.52l-14.083-4.118z" class="cls-2" data-name="Path 858" transform="translate(-198.502 -95.595)"/>
+        <path id="Path_859" d="M329.94 28.485h-22a6.732 6.732 0 0 1-6.765-6.7V0z" class="cls-3" data-name="Path 859" transform="translate(-183.293)"/>
+        <path id="Path_860" d="M199.777 254.946H166.5a2.15 2.15 0 0 0-2.161 2.14v28.675a2.151 2.151 0 0 0 2.161 2.14h33.276a2.15 2.15 0 0 0 2.161-2.14v-28.675a2.151 2.151 0 0 0-2.16-2.14zM168.662 268.7h12.316v5.438h-12.316zm16.638 0h12.316v5.438H185.3zm12.316-4.28H185.3v-5.2h12.316v5.2zm-16.638-5.2v5.2h-12.316v-5.2zm-12.316 19.2h12.316v5.2h-12.316zm16.638 5.2v-5.2h12.316v5.2z" class="cls-4" data-name="Path 860" transform="translate(-74.522 -203.16)"/>
+    </g>
+</svg>
