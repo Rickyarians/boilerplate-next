@@ -1,3 +1,2 @@
-## Mejik Art Tester
+## Simple Next Boiler Plate
 
-This project is tester for mejik art and build lms 
