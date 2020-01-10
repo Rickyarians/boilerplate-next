@@ -2,6 +2,7 @@ import ChatInputText from "./../components/textinput/InputTextList"
 import { Avatar, Divider } from "antd"
 import moment from "moment"
 import { useState, useEffect } from 'react'
+import CardList from './../components/card/card'
 
 export default ({
   data,
@@ -12,6 +13,25 @@ export default ({
    
   }, [data])
 
+  const ListItem = () => {
+    let item = []
+
+    for (let i = 1; i <= data.length; i++) {
+
+      if(i % 3 == 0) {
+        item.push(
+          <CardList text={data[i-1]} bgcolor="red"/>
+        )
+      } else {
+        item.push(
+          <CardList text={data[i-1]} bgcolor="black"/>
+        )
+      }
+     
+    }
+    return item
+  }
+
   console.log(data)
   return (
     <div className="pt-5">
@@ -19,12 +39,8 @@ export default ({
        
         <div className="container-fluid bg-default p-3">
           <div className="d-flex w-100 justify-content-space-between">
-            <span className="description">
-              List.
-            </span>
-          
           </div>
-          <h4>Answer</h4>
+          <h4>Simple List</h4>
           <div className="d-flex align-item-center">
             <ChatInputText
               defaultValue=" "
@@ -32,12 +48,7 @@ export default ({
               style={{ marginLeft: "10px"}}
               onPressEnter={(e, data) => {
                 if (e.target.value.trim() !== '') {
-                  // onSendComment({
-                  //   user: user,
-                  //   comment: e.target.value,
-                  //   ...data
-                  // })
-                  alert(e.target.value)
+                  // alert(e.target.value)
                   insertdata(e.target.value)
                   e.target.value = ""
                 } else {
@@ -47,7 +58,7 @@ export default ({
               }}
               onClickSend={(e, data) => {
                 if (e.text.trim() !== '') {
-                  alert(e.text)
+                  // alert(e.text)
                   insertdata(e.text)
                   e.text = ""
                 } else {
@@ -59,6 +70,14 @@ export default ({
           </div>
         
         </div>
+      
+      {
+        data ?
+        ListItem()
+        :
+        ''
+      }
+      
       </div>
     </div>
   )

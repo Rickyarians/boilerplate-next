@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import { gql } from 'apollo-boost'
 import { useRouter } from 'next/router'
-import { useQuery, useMutation } from '@apollo/react-hooks'
 import { message } from 'antd'
 
 import CheckIn from '../../layouts/ListOne'

@@ -1,7 +1,5 @@
 import { Fragment, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { useQuery, useMutation } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
 import moment from 'moment'
 
 
@@ -9,19 +7,9 @@ import Calendar from '../../layouts/CalendarOne'
 
 
 const Schedule = ( {}) => {
-  const router = useRouter()
-
-  const [role, setRole] = useState('member')
   const [events, setEvents] = useState([])
-  const [space, setSpace] = useState('')
   const [date, setDate] = useState(Date.now())
   const [viewMode, setViewMode] = useState('week')
-
- 
-
- 
-
-  
 
 
   const mapEvents = (events) => {
@@ -36,79 +24,45 @@ const Schedule = ( {}) => {
     setEvents(events)
   }
 
-
-
   const loadEvent = (date = Date.now(), viewMode = 'week') => {
     const start = moment(date).startOf(viewMode).startOf('day').toISOString()
     const end = moment(date).endOf(viewMode).startOf('day').toISOString()
 
-    // eventRefetch({
-    //   query: { spaceId: spaceId },
-    //   where: {
-    //     "start_gte": start,
-    //     "start_lte": end
-    //   }
-    // })
-    //   .then(({ data }) => mapEvents(data.events))
   }
 
-  
-
-  
 
   const onEventAdded = async (variables) => {
-    variables = { ...variables, spaceId: spaceId }
-    const eventAdded = await addEvent({
-      variables,
-      update: () => {
-        loadEvent(date, viewMode)
-      }
-    })
+    // console.log(variables)
 
-    if (eventAdded) {
-      return {}
+    const data = events.findIndex((obj => obj.start >= variables.start && obj.end <= variables.end))
+    if(data == -1) {
+      const newarray =[...events, variables]
+      await setEvents(newarray)
+      loadEvent(date, viewMode)
     } else {
-      return {
-        status: 'error',
-        message: 'Event added failed!'
-      }
+      alert('nggak bisa malih')
     }
+    
   }
 
   const onEventEdited = async (variables) => {
-    const eventEdited = await editEvent({
-      variables,
-      update: () => {
-        loadEvent(date, viewMode)
-      }
-    })
-
-    if (eventEdited) {
-      return {}
-    } else {
-      return {
-        status: 'error',
-        message: 'Event updated failed!'
-      }
-    }
+    const arrnew = events
+    const data = events.findIndex((obj => obj.id == variables.id))
+    arrnew.splice(data, 1, variables)
+    setEvents(arrnew)
+    loadEvent(date, viewMode)
   }
 
   const onEventDeleted = async (variables) => {
-    const eventDeleted = await deleteEvent({
-      variables,
-      update: () => {
-        loadEvent(date, viewMode)
-      }
-    })
+    console.log(variables)
 
-    if (eventDeleted) {
-      return {}
-    } else {
-      return {
-        status: 'error',
-        message: 'Event deleted failed!'
-      }
-    }
+    const arr = events.filter(function(el){
+      return el.id !== variables.id;
+    });
+
+    setEvents(arr)
+
+    loadEvent(date, viewMode)
   }
 
   const onNavigate = newDate => {
@@ -123,7 +77,6 @@ const Schedule = ( {}) => {
 
   const propsData = [{}, {
     events: events,
-    isAdmin: role === 'admin',
     onView: onView,
     onNavigate: onNavigate,
     onEventAdded: onEventAdded,
@@ -131,7 +84,7 @@ const Schedule = ( {}) => {
     onEventDeleted: onEventDeleted,
   }]
 
-  
+    
     return (
       <Fragment>
         <div id="fade-in">

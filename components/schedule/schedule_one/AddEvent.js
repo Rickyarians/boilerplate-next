@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Modal, Button, Form, Input, DatePicker, message } from 'antd'
 import moment from 'moment'
+const uuidv1 = require('uuid/v1');
 
 function range(start, end) {
   const result = [];
@@ -10,7 +11,7 @@ function range(start, end) {
   return result;
 }
 
-const AddEvent = ({ form, data = {}, visible, slotInfo, toggle, onSubmit }) => {
+const AddEvent = ({ form, data = {}, visible, slotInfo, toggle, onSubmit, isModalVisible}) => {
   const { getFieldDecorator, validateFields } = form
   const [loading, setLoading] = useState(false)
   const [startDate, setStartDate] = useState(data && data.start ? moment(data.start) : moment(slotInfo.start))
@@ -68,14 +69,16 @@ const AddEvent = ({ form, data = {}, visible, slotInfo, toggle, onSubmit }) => {
         if (typeof onSubmit == 'function') {
           for (const k in values) {
             if (typeof values[k] == 'object' && values[k] !== null) {
-              values[k] = moment(values[k]).toISOString()
+              values[k] = values[k].toDate()
             }
           }
-
+          var id = uuidv1()
+          values = {...values, id };
           const submited = await onSubmit(values)
-          if (submited && submited.status) {
-            message[submited.status](submited.message)
-          }
+          
+          // if (submited && submited.status) {
+          //   message[submited.status](submited.message)
+          // }
           form.resetFields()
         }
         toggle(!visible)
@@ -85,6 +88,8 @@ const AddEvent = ({ form, data = {}, visible, slotInfo, toggle, onSubmit }) => {
     setLoading(false)
   }
 
+
+  console.log(visible)
   return (
     <Modal
       visible={visible}
@@ -141,7 +146,7 @@ const AddEvent = ({ form, data = {}, visible, slotInfo, toggle, onSubmit }) => {
 
         <Form.Item label="Event Description">
           {getFieldDecorator('description', descriptionConfig)(
-            <Input.TextArea rows={5} placeholder="Event description (you can use markdown)" />,
+            <Input.TextArea rows={5} placeholder="Event description" />,
           )}
         </Form.Item>
 

@@ -8,7 +8,7 @@ export default ({
   value,
   autoFocus = true,
   onChange = () => null,
-  placeholder = "type your message here",
+  placeholder = "type your list text here",
   onPressEnter = () => null,
   id = null,
   onClickSend = () => null,

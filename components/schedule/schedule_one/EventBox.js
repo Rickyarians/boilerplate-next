@@ -1,7 +1,6 @@
 import { useState, useEffect, Fragment } from 'react'
 import { Button, Modal, Icon, message } from 'antd'
 import moment from 'moment'
-import ReactMarkdown from 'react-markdown'
 
 import EditEvent from './AddEvent'
 
@@ -43,9 +42,6 @@ export default ({ isAdmin, event, onEdit, onDelete }) => {
       content: 'Your action cannot be undo',
       onOk() {
         onDelete(event)
-          .then(data => {
-            message[data.status](data.message)
-          })
       },
       onCancel() { },
     })
@@ -53,9 +49,10 @@ export default ({ isAdmin, event, onEdit, onDelete }) => {
 
   return (
     <Fragment>
-      <Button block={true} className={`border-0 text-white text-left px-2`} style={{ backgroundColor: bgColor }} onClick={_ => setOpen(true)}>
+      <Button block={true} className={`border-0 text-white text-left px-2`} style={{ backgroundColor: bgColor, height: '100%' }} onClick={_ => setOpen(true)}>
         <span className="text-bold d-block">{event.title}</span>
-        <span>{moment(event.start).format('HH:mm')}</span>
+        <span>{moment(event.start).format('HH:mm')} - </span>
+        <span> {moment(event.end).format('HH:mm')}</span>
       </Button>
 
       <Modal
@@ -63,14 +60,10 @@ export default ({ isAdmin, event, onEdit, onDelete }) => {
         onCancel={_ => setOpen(false)}
         footer={[
           <Fragment>
-            {
-              isAdmin ? (
-                <Fragment>
-                  <Icon type="edit" className="px-2" style={{ color: "#2d98da", fontSize: 20 }} onClick={_ => setEdited(true)} /> &nbsp;
+            <Fragment>
+              <Icon type="edit" className="px-2" style={{ color: "#2d98da", fontSize: 20 }} onClick={_ => setEdited(true)} /> &nbsp;
                   <Icon type="delete" className="px-2" style={{ color: "#eb3b5a", fontSize: 20 }} onClick={_ => modalConfirm()} /> &nbsp;
                 </Fragment>
-              ) : ''
-            }
             <Button type="primary" onClick={_ => setOpen(false)}>Close</Button>
           </Fragment>
         ]}
@@ -78,24 +71,24 @@ export default ({ isAdmin, event, onEdit, onDelete }) => {
         closable={false}
       >
         <div className="d-inline-block w-100">
-          <span className="float-left">{event.title}</span>
-          <span className="float-right">{moment(event.start).format('dddd, HH:mm')}</span>
+          <div>  
+            <span>{moment(event.start).format('dddd, HH:mm')} - </span>
+            <span > {moment(event.end).format('dddd, HH:mm')}</span>
+          </div>
+          <h3>{event.title}</h3>
+
         </div>
         <div className="d-block">
-          <ReactMarkdown source={event.description} />
+          <p>{event.description}</p>
         </div>
       </Modal>
 
-      {
-        isAdmin ? (
-          <EditEvent
-            visible={isEdited}
-            data={event}
-            toggle={setEdited}
-            onSubmit={onEdit}
-          />
-        ) : ''
-      }
+      <EditEvent
+        visible={isEdited}
+        data={event}
+        toggle={setEdited}
+        onSubmit={onEdit}
+      />
     </Fragment>
   )
 }
